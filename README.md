@@ -1,4 +1,4 @@
-# RequestContext - section 4
+# RequestContext - section 3
 
 The `RequestContext` class provides a thread-safe way to store and retrieve the user ID within the current thread context. It uses `ThreadLocal` to ensure that each thread has its own isolated copy of the user ID, which is useful in multi-threaded environments such as web applications.
 
