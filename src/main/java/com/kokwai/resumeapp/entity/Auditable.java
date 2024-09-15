@@ -1,5 +1,6 @@
 package com.kokwai.resumeapp.entity;
 
+import com.kokwai.resumeapp.domain.RequestContext;
 import com.kokwai.resumeapp.exception.ApiException;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -48,7 +49,7 @@ public abstract class Auditable {
 
     @PrePersist
     public void beforePersist() {
-        var user_id = 1L;
+        var user_id = RequestContext.getUserId();
         if( user_id == null ) {
             throw new ApiException("Cannot persists entity without user id in request context for this thread");
         }
@@ -60,7 +61,7 @@ public abstract class Auditable {
 
     @PreUpdate
     public void beforeUpdate() {
-        var user_id = 1L;
+        var user_id = RequestContext.getUserId();
         if( user_id == null )
         {
             throw new ApiException( "Cannot persists entity without user id in request context for this thread" );
