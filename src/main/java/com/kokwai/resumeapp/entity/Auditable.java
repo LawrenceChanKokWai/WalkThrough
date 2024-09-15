@@ -1,5 +1,6 @@
 package com.kokwai.resumeapp.entity;
 
+import com.kokwai.resumeapp.exception.ApiException;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
